@@ -1,4 +1,4 @@
-name: 每5分钟输出20次内容
+name: 每5分钟输出内容
 
 on:
   schedule:
@@ -9,8 +9,6 @@ jobs:
   print_job:
     runs-on: ubuntu-latest
     steps:
-      - name: 打印内容
+      - name: 输出内容
         run: |
-          for i in {1..20}; do
-            echo "第 $i 次输出内容"
-          done
+          echo "这次输出时间: $(date)"
