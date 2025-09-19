@@ -1,14 +1,13 @@
-name: 每5分钟输出内容
+name: 每天晚上8点打印时间
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # 每5分钟触发一次
-  workflow_dispatch:        # 可以手动触发
+    - cron: "0 12 * * *"  # 每天 UTC 12:00 => 中国时间 20:00
 
 jobs:
-  print_job:
+  print_time:
     runs-on: ubuntu-latest
     steps:
-      - name: 输出内容
+      - name: 打印中国时间
         run: |
-          echo "这次输出时间: $(date)"
+          echo "当前中国时间：$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
