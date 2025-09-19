@@ -1,4 +1,4 @@
-name: 每5分钟输出内容
+name: 中国时间每5分钟输出内容
 
 on:
   schedule:
