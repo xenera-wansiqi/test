@@ -1,4 +1,4 @@
-name: 每5分钟触发
+name: 5.yml
 
 on:
   schedule:
