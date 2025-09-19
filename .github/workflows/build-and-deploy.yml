@@ -1,0 +1,16 @@
+name: 每5分钟输出20次内容
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # 每5分钟触发一次
+  workflow_dispatch:        # 可以手动触发
+
+jobs:
+  print_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 打印内容
+        run: |
+          for i in {1..20}; do
+            echo "第 $i 次输出内容"
+          done
