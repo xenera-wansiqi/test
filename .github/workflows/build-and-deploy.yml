@@ -1,8 +1,8 @@
-name: 每天晚上8点打印时间
+name: 每两小时打印时间
 
 on:
   schedule:
-    - cron: "0 12 * * *"  # 每天 UTC 12:00 => 中国时间 20:00
+    - cron: "0 */2 * * *"  # 每两小时的整点运行
 
 jobs:
   print_time:
